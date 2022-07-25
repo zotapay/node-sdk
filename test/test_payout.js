@@ -1,17 +1,13 @@
-const {generateTestOrderWithOkResponse, MockResponse, generateTestPayoutWithOkResponse,
-    generateTestPayoutWithNotOkResponse, generateTestOrder, TestCreditCards, generateTestPayout
+const {MockResponse, generateTestPayoutWithOkResponse,
+    generateTestPayoutWithNotOkResponse, generateTestPayout
 } = require("../zotapaysdk/testing_tools");
 const {MGClient} = require("../zotapaysdk/client");
 const nock = require("nock");
 const {assert} = require("chai");
 const {MGPayoutResponse} = require("../zotapaysdk/mg_requests/payout_response");
 const {MGPayoutRequest} = require("../zotapaysdk/mg_requests/payout_request");
-const {MGCardDepositRequest} = require("../zotapaysdk/mg_requests/card_deposit_request");
-const {MGDepositRequest} = require("../zotapaysdk/mg_requests/deposit_request");
 
 describe("Payout tests", function () {
-
-
     it("Payout test success", async () => {
 
         let [payoutPayload, responsePayload] = generateTestPayoutWithOkResponse(500, "MYR")
@@ -70,7 +66,7 @@ describe("Payout tests", function () {
         let testPayoutPayload = generateTestPayout(500, "USD", )
         const payoutRequest = new MGPayoutRequest(testPayoutPayload)
 
-        for (let [_,value] of Object.entries(payoutRequest)) {
+        for (let [,value] of Object.entries(payoutRequest)) {
             let testParamValue = testPayoutPayload[value.paramName] ? testPayoutPayload[value.paramName] : null
 
             assert(value.paramValue === testParamValue, "Values should be the same")
@@ -88,7 +84,7 @@ describe("Payout tests", function () {
             payoutRequest[setter](payoutRequestPayload[value])
         }
 
-        for (let [_,value] of Object.entries(payoutRequest)) {
+        for (let [,value] of Object.entries(payoutRequest)) {
             assert(payoutRequest[value.paramName] == payoutRequestPayload[value.paramName],
                 "There should not be a mismatch")
         }

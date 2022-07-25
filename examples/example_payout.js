@@ -1,5 +1,5 @@
-import {MGClient} from "../zotapaysdk/client";
-import {MGPayoutRequest} from "../zotapaysdk/mg_requests/payout_request"
+const {MGClient} = require("../zotapaysdk/client");
+const {MGPayoutRequest} = require("../zotapaysdk/mg_requests/payout_request")
 
 const client = new MGClient()
 
@@ -23,7 +23,7 @@ const payoutParameters = {
     customerBankProvince:"Bank Province",
     customerBankArea:"Bank Area / City",
     customerBankRoutingNumber:"000",
-    customParam:'{\"UserId\": \"e139b447\"}',
+    customParam:"{\"UserId\": \"e139b447\"}",
     checkoutUrl:"https://www.example-merchant.com/account/withdrawal/?uid=e139b447",
 
     customerCountryCode : "testCode",

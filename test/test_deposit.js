@@ -1,4 +1,3 @@
-const {MGRequestParam} = require("../zotapaysdk/mg_requests/objects");
 const {assert, expect} = require("chai");
 const {generateTestOrderWithOkResponse, MockResponse, generateTestOrder, TestCreditCards} = require("../zotapaysdk/testing_tools");
 const {MGClient} = require("../zotapaysdk/client");
@@ -50,7 +49,7 @@ describe("Deposit tests", function () {
             testDepositPayload[DepositRequestParameters.CUSTOMER_STATE] = ""
 
             const depositRequest = new MGDepositRequest(testDepositPayload)
-            let [ok, _] = depositRequest.validate()
+            let [ok,] = depositRequest.validate()
 
             assert(!ok, "There should be validation error for missing state")
         }
@@ -65,7 +64,7 @@ describe("Deposit tests", function () {
             testDepositPayload[DepositRequestParameters.CUSTOMER_STATE] = "NY"
 
             const depositRequest = new MGDepositRequest(testDepositPayload)
-            let [ok, _] = depositRequest.validate()
+            let [ok,] = depositRequest.validate()
 
             assert(ok, "There should be not be a validation error for missing state")
         }
@@ -76,7 +75,7 @@ describe("Deposit tests", function () {
         let testDepositPayload = generateTestOrder(500, "USD" )
         const depositRequest = new MGDepositRequest(testDepositPayload)
 
-        for (let [_,value] of Object.entries(depositRequest)) {
+        for (let [,value] of Object.entries(depositRequest)) {
             let testParamValue = testDepositPayload[value.paramName] ? testDepositPayload[value.paramName] : null
 
             assert(value.paramValue === testParamValue, "Values should be the same")
@@ -86,7 +85,7 @@ describe("Deposit tests", function () {
     it("Test card deposit request validation success", () => {
         let testDepositPayload = generateTestOrder(500, "USD", TestCreditCards.visaApprovedNo3d())
         const cardDepositRequest = new MGCardDepositRequest(testDepositPayload)
-        const [ok, _] = cardDepositRequest.validate()
+        const [ok,] = cardDepositRequest.validate()
 
         assert(ok, "Card deposit request should be validated correctly")
     })
@@ -95,7 +94,7 @@ describe("Deposit tests", function () {
         let testDepositPayload = generateTestOrder(500, "USD", TestCreditCards.visaApprovedNo3d())
         testDepositPayload["cardExpirationMonth"] = "002"
         const cardDepositRequest = new MGCardDepositRequest(testDepositPayload)
-        const [ok, _] = cardDepositRequest.validate()
+        const [ok,] = cardDepositRequest.validate()
 
         assert(!ok, "Card deposit request should not be validated")
     })
@@ -104,7 +103,7 @@ describe("Deposit tests", function () {
         let testDepositPayload = generateTestOrder(500, "USD", TestCreditCards.visaApprovedNo3d())
         testDepositPayload["cardExpirationYear"] = "20220"
         const cardDepositRequest = new MGCardDepositRequest(testDepositPayload)
-        const [ok, _] = cardDepositRequest.validate()
+        const [ok,] = cardDepositRequest.validate()
 
         assert(!ok, "Card deposit request should not be validated")
     })
@@ -114,7 +113,7 @@ describe("Deposit tests", function () {
 
         testDepositPayload["cardNumber"] = "12345678915621623535353535"
         const cardDepositRequest = new MGCardDepositRequest(testDepositPayload)
-        const [ok, reason] = cardDepositRequest.validate()
+        const [ok,] = cardDepositRequest.validate()
 
         assert(!ok, "Card deposit request should not be validated")
     })
@@ -138,7 +137,7 @@ describe("Deposit tests", function () {
         const testDepositPayload = generateTestOrder(500, "USD", TestCreditCards.visaPending3d())
         const depositRequest = new MGCardDepositRequest(testDepositPayload)
 
-        for (let [_,value] of Object.entries(depositRequest)) {
+        for (let [,value] of Object.entries(depositRequest)) {
             let testParamValue = testDepositPayload[value.paramName] ? testDepositPayload[value.paramName] : null
 
             assert(value.paramValue === testParamValue, "Values should be the same")
@@ -146,7 +145,7 @@ describe("Deposit tests", function () {
     })
 
     it("Test card deposit response success", () => {
-        const [_, responsePayload] = generateTestOrderWithOkResponse(500, "USD",
+        const [, responsePayload] = generateTestOrderWithOkResponse(500, "USD",
             TestCreditCards.visaPending3d())
 
         const response = new MGCardDepositResponse(responsePayload)
@@ -172,7 +171,7 @@ describe("Deposit tests", function () {
             cardDepositRequest[setter](cardDepositRequestPayload[value])
         }
 
-        for (let [_,value] of Object.entries(cardDepositRequest)) {
+        for (let [,value] of Object.entries(cardDepositRequest)) {
             assert(cardDepositRequest[value.paramName] == cardDepositRequestPayload[value.paramName],
                 "There should not be a mismatch")
         }
@@ -190,7 +189,7 @@ describe("Deposit tests", function () {
             depositRequest[setter](depositRequestPayload[value])
         }
 
-        for (let [_,value] of Object.entries(depositRequest)) {
+        for (let [,value] of Object.entries(depositRequest)) {
             assert(depositRequest[value.paramName] == depositRequestPayload[value.paramName],
                 "There should not be a mismatch")
         }

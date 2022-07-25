@@ -1,5 +1,6 @@
-import {MGClient} from "../zotapaysdk/client";
-import {MGDepositRequest} from "../zotapaysdk/mg_requests/deposit_request"
+const {MGClient} = require("../zotapaysdk/client");
+const {MGDepositRequest} = require("../zotapaysdk/mg_requests/deposit_request")
+const {MGCardDepositRequest} = require("../zotapaysdk/mg_requests/card_deposit_request")
 
 const client = new MGClient()
 
@@ -22,7 +23,7 @@ const depositParameters = {
     checkoutUrl : "https://www.example-merchant.com/account/deposit/?uid=e139b447",
     customParam : '{"UserId": "e139b447"}'}
 
-const exampleCCDepositRequest = new MGCardDepositRequest({
+const cardDepositParameters = {
     merchantOrderID : "testcardeposit",
     merchantOrderDesc : "Test order",
     orderAmount : "500.00",
@@ -46,11 +47,23 @@ const exampleCCDepositRequest = new MGCardDepositRequest({
     cardHolderName:"John Doe",
     cardExpirationMonth:"08",
     cardExpirationYear:"2027",
-    cardCvv:"123"})
+    cardCvv:"123"}
 
 const exampleDepositRequest = new MGDepositRequest(depositParameters)
+const exampleCCDepositRequest = new MGCardDepositRequest(cardDepositParameters)
 
 client.sendDepositRequest(exampleDepositRequest)
+    .then((response) => {
+        console.log(response)
+        if (response.isOk) {
+            // manipulate the response
+            console.log(response.depositUrl)
+        } else {
+            console.log(response.error)
+            console.log("Error")
+        }})
+
+client.sendDepositRequest(exampleCCDepositRequest)
     .then((response) => {
         console.log(response)
         if (response.isOk) {
