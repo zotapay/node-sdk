@@ -43,7 +43,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - name: Running ESLint...
-      run: npm pretest
+      run: npm run pretest
     - name: Running tests...
       run: npm test
     - name: Upload coverage to Codecov
