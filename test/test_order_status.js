@@ -1,4 +1,4 @@
-const {generateTestOrderWithOkResponse, MockResponse, generateOrderStatusCheckOkPayload,
+const {MockResponse, generateOrderStatusCheckOkPayload,
     generateOrderStatusCheckNotOkPayload
 } = require("../zotapaysdk/testing_tools");
 const {MGClient} = require("../zotapaysdk/client");

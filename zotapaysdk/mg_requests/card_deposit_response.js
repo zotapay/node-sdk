@@ -1,8 +1,6 @@
 const HTTP_STATUS_OK = require("../helpers").HTTP_STATUS_OK
 const MGResponse = require("./mg_response.js").MGResponse
 
-const util = require('util');
-
 class MGCardDepositResponse extends MGResponse {
 
     static DATA = 'data'

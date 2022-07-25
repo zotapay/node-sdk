@@ -54,7 +54,7 @@ class ValidateParameters {
         * */
         let payload = {}
 
-        for (let [_,value] of Object.entries(this)) {
+        for (let [,value] of Object.entries(this)) {
 
             if (value instanceof MGRequestParam) {
                 payload[value.paramName] = value.paramValue

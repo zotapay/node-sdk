@@ -1,8 +1,6 @@
 const util = require('util');
 const crypto = require('crypto');
 const os = require("os")
-const {MGPayoutRequest} = require("./mg_requests/payout_request");
-const {MGOrderStatusRequest} = require("./mg_requests/order_status_request");
 const {MGOrderStatusResponse} = require("./mg_requests/order_status_response");
 const MGCredentialsManager = require("./config.js").MGCredentialsManager
 const MGUrlsFormatter = require("./urls.js").MGUrlsFormatter
@@ -163,7 +161,7 @@ class MGClient {
         return {"content-type": "application/json", "user-agent": this._prepareUserAgentForRequest()}
     }
 
-    _generatePayoutRequestHeaders(payload) {
+    _generatePayoutRequestHeaders() {
         return {"content-type": "application/json", "user-agent": this._prepareUserAgentForRequest()}
     }
 

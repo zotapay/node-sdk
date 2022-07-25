@@ -1,3 +1,6 @@
+const crypto = require('crypto');
+const util = require('util');
+
 class MGCallback {
     static  TYPE = "type"
     static  STATUS = "status"
@@ -36,10 +39,10 @@ class MGCallback {
         /*
         * Validates whether the signature returned in the callback is OK.
         *
-        * @param {String} merchantSecretKey The secret key as provided by ZotaPay*/
+        * @param {String} merchantSecretKey The secret key as provided by ZotaPay
+        * */
         const signature = util.format("%s%s%s%s%s%s%s", this.endpointID, this.orderID, this.merchantOrderID,
-            this.status, this.amount, this.customerEmail, merchantSecretKey,
-            depositRequest.orderAmount, depositRequest.customerEmail, this.merchantSecretKey)
+            this.status, this.amount, this.customerEmail, merchantSecretKey)
 
         const sigHash = crypto.createHash('sha256').update(signature).digest('hex');
         return sigHash === this.signature
