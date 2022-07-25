@@ -50,7 +50,7 @@ jobs:
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        directory: ./nyc_output/processinfo/
+        directory: ./civerage/lcov_report/
 #   - name: Publishing package to npm
 #    run: npm publish
 #      env: 
