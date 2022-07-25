@@ -4,7 +4,7 @@
   "description": "This Node.js SDK provides all the necessary methods for integrating the Zotapay Merchant API.",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=text mocha",
+    "test": "nyc --reporter=lcov mocha",
     "pretest": "eslint --ignore-path .gitignore ."
   },
   "repository": {
