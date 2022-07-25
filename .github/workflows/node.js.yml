@@ -42,13 +42,16 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm test
+    - name: Running ESLint...
+      run: npm pretest
+    - name: Running tests...
+      run: npm test
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         directory: ./nyc_output/processinfo/
-    - name: Publishing package to npm
-      run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+#   - name: Publishing package to npm
+#    run: npm publish
+#      env: 
+#        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
