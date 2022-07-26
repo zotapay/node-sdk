@@ -51,7 +51,7 @@ jobs:
       with:
         #token: ${{ secrets.CODECOV_TOKEN }}
         token: "758ebf20-aba4-4a06-923d-4ad40aa799bd"
-#        directory: ./civerage/lcov-report/zotapaysdk
+        directory: ./coverage
 #   - name: Publishing package to npm
 #    run: npm publish
 #      env: 
