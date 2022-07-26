@@ -277,3 +277,4 @@ parameters is in-line with what Zotapay's endpoint expects. See the API DOCS for
 format of the different parameters.
 
 ## Test Coverage
+[![codecov](https://codecov.io/gh/zotapay/node-sdk/branch/main/graphs/tree.svg?width=650&height=150&src=pr&token=NdEjuAL8eN)](https://codecov.io/gh/zotapay/node-sdk/)
