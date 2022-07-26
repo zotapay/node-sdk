@@ -46,10 +46,11 @@ jobs:
       run: npm run pretest
     - name: Running tests...
       run: npm test
-    - name: Upload coverage to Codecov
+    - name: Upload coverage to Codecov 
       uses: codecov/codecov-action@v3
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+        #token: ${{ secrets.CODECOV_TOKEN }}
+        token: "758ebf20-aba4-4a06-923d-4ad40aa799bd"
 #        directory: ./civerage/lcov-report/zotapaysdk
 #   - name: Publishing package to npm
 #    run: npm publish
