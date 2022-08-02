@@ -1,3 +1,7 @@
+[![NPM version](https://img.shields.io/badge/zotasdk-v1.0.0-blue)](https://www.npmjs.com/package/zotapaysdk)
+[![codecov](https://codecov.io/gh/zotapay/node-sdk/branch/main/graph/badge.svg?token=NdEjuAL8eN)](https://codecov.io/gh/zotapay/node-sdk)
+![](https://img.shields.io/badge/NodeJS-16.15.1%2B-blue)
+
 # Official NodeJS REST API SDK
 This is the **official** page of the [Zotapay](http://www.zotapay.com) NodeJS SDK. It is intended to be used by
 developers who run modern Python applications and would like to integrate our next generation payments platform.
