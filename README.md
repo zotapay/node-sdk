@@ -1,10 +1,10 @@
 [![NPM version](https://img.shields.io/badge/zotasdk-v1.1.0-blue)](https://www.npmjs.com/package/zotapaysdk)
 [![codecov](https://codecov.io/gh/zotapay/node-sdk/branch/main/graph/badge.svg?token=NdEjuAL8eN)](https://codecov.io/gh/zotapay/node-sdk)
-![](https://img.shields.io/badge/NodeJS-16.15.1%2B-blue)
+![](https://img.shields.io/badge/NodeJS-14%2B-blue)
 
 # Official NodeJS REST API SDK
 This is the **official** page of the [Zotapay](http://www.zotapay.com) NodeJS SDK. It is intended to be used by
-developers who run modern Python applications and would like to integrate our next generation payments platform.
+developers who run modern NodeJS applications and would like to integrate our next generation payments platform.
 
 ## REST API Docs
 
@@ -19,7 +19,7 @@ The SDK covers all available functionality that ZotaPay's Merchant API exposes.
 
 ### Requirements
 * A functioning Zotapay Sandbox or Production account and related credentials
-* NodeJS 16.15.1 (or higher)
+* NodeJS 14 (or higher)
 
 ### Installation
 ```sh
@@ -40,10 +40,10 @@ This part of the documentation will guide you on how to configure and use this S
 
 To use this API, obtain the following credentials from Zotapay:
 
-```
-MerchantID	        A merchant unique identifier, used for identification.
-MerchantSecretKey	A secret key to keep privately and securely, used for authentication.
-EndpointID	        One or more unique endpoint identifiers to use in API requests.
+```node
+MerchantID	        - A merchant unique identifier, used for identification.
+MerchantSecretKey	- A secret key to keep privately and securely, used for authentication.
+EndpointID	        - One or more unique endpoint identifiers to use in API requests.
 ```
 Contact [Zotapay](https://zotapay.com/contact/) to start your onboarding process and obtain all the credentials.
 
@@ -63,7 +63,7 @@ The implementation fo the Zotapay API SDK depends on creating an instance of the
 configuration is the one passed to the client itself.
 
 Example:
-```
+```node
 import {MGClient} from "zotapaysdk";
 
 const parameters = {merchantID=<MerchantID as received from Zotapay>, 
@@ -77,7 +77,7 @@ const client = new MGClient()
 
 There are 4 environment variables that need to be set for the API SDK to be configured correctly:
 
-```
+```node
 ZOTAPAY_MERCHANT_ID             - MerchantID as received from Zotapay
 ZOTAPAY_MERCHANT_SECRET_KEY     - MerchantSecretKey as received from Zotapay
 ZOTAPAY_ENDPOINT_ID             - EndpointID as received from Zotapay
@@ -88,7 +88,7 @@ ZOTAPAY_REQUEST_URL             - https://api.zotapay-sandbox.com or https://api
 Configuration parameters can be passed through a `mg_config.js` file placed in the user's home directory.
 
 Example of a '~/mg_config.js' :
-```
+```node
 exports.config = {
     merchantID : <MerchantID as received from Zotapay>,
     merchantSecretKey : <MerchantSecretKey as received from Zotapay>,
@@ -230,7 +230,7 @@ Sending a payout request is almost identical to sending a deposit request.
 The request is built:
 
 ```node
-const {MGPayoutRequest} = require("./mg_requests/payout_request");
+import {MGPayoutRequest} from "zotapaysdk";;
 
 const payoutParameters = {
     merchantOrderID:"TbbQzewLWwDW6222sadaaasdasdasdasd23",
@@ -265,10 +265,46 @@ const payoutParameters = {
 
 const examplePayoutRequest = new MGPayoutRequest(payoutParameters)
 
+mgClient.sendPayoutRequest(examplePayoutRequest)
+    .then((response) => {
+        console.log(response)
+        if (response.isOk) {
+            // manipulate the response
+            console.log(response.orderID)
+        } else {
+            console.log(response.error)
+            console.log("Error")
+        }})
+
 ```
 
 The client returns `MGPayoutResponse` which is again a wrapper around the standard HTTP response.
 
+## Status Check
+Merchant should issue an Order Status Request to get the most up-to-date status of customer’s order transaction.
+
+```node
+import {MGOrderStatusRequest} from "zotapaysdk";
+
+const statusCheckPayload = {
+    merchantOrderID: "testMerchantOrderID", 
+    orderID: "testOrderID"
+}
+
+const exampleStatusCheckRequest = new MGOrderStatusRequest(statusCheckPayload)
+
+mgClient.sendOrderStatusRequest(exampleStatusCheckRequest)
+    .then((response) => {
+        console.log(response)
+        if (response.isOk) {
+            // manipulate the response
+            console.log(response.status)
+        } else {
+            console.log(response.errorMessage)
+            console.log("Error")
+        }})
+
+```
 ## Callbacks
 `MGCallback` is a class that parses the raw HTTP Request sent from Zotapay to the configured endpoint. It's purpose
 is to make working with callbacks manageable.
