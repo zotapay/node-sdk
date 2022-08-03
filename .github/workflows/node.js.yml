@@ -16,20 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # Node versions to test - See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-        node-version: [ 14 ] # , 16, 18]
+        node-version: [ 14, 16, 18 ]
 
     steps:
-#     - name: Notifying on build via Slack
-#       if: success()
-#       id: slack
-#       env:
-#         SLACK_BOT_TOKEN: ${{ secrets.MG_SLACKBOT_TOKEN }}
-#       uses: voxmedia/github-action-slack-notify-build@v1
-#       with:
-#         channel: mg-pulse
-#         status: STARTING
-#         color: warning
 
     - uses: actions/checkout@v3
 
@@ -53,9 +42,3 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
         directory: ./coverage
 
-# The publish action should be triggered in another workflow that only sends packages we tagged with v1.2.3
-# FYI - remove this comment later
-#   - name: Publishing package to npm
-#    run: npm publish
-#      env: 
-#        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

@@ -1,6 +1,6 @@
 {
   "name": "zotapaysdk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This Node.js SDK provides all the necessary methods for integrating the Zotapay Merchant API.",
   "main": "index.js",
   "scripts": {

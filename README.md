@@ -1,4 +1,4 @@
-[![NPM version](https://img.shields.io/badge/zotasdk-v1.0.0-blue)](https://www.npmjs.com/package/zotapaysdk)
+[![NPM version](https://img.shields.io/badge/zotasdk-v1.1.0-blue)](https://www.npmjs.com/package/zotapaysdk)
 [![codecov](https://codecov.io/gh/zotapay/node-sdk/branch/main/graph/badge.svg?token=NdEjuAL8eN)](https://codecov.io/gh/zotapay/node-sdk)
 ![](https://img.shields.io/badge/NodeJS-16.15.1%2B-blue)
 
