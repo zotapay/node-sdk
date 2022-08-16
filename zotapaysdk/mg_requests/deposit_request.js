@@ -37,7 +37,7 @@ class MGDepositRequest extends DepositRequestParameters {
         this._orderAmount = new MGRequestParam(
             DepositRequestParameters.ORDER_AMOUNT,
             orderAmount,
-            12,
+            24,
             true
         )
 
@@ -58,21 +58,21 @@ class MGDepositRequest extends DepositRequestParameters {
         this._customerFirstName = new MGRequestParam(
             DepositRequestParameters.CUSTOMER_FIRST_NAME,
             customerFirstName,
-            50,
+            128,
             true
         )
 
         this._customerLastName = new MGRequestParam(
             DepositRequestParameters.CUSTOMER_LAST_NAME,
             customerLastName,
-            50,
+            128,
             true
         )
 
         this._customerAddress = new MGRequestParam(
             DepositRequestParameters.CUSTOMER_ADDRESS,
             customerAddress,
-            50,
+            128,
             true
         )
 
@@ -86,7 +86,7 @@ class MGDepositRequest extends DepositRequestParameters {
         this._customerCity = new MGRequestParam(
             DepositRequestParameters.CUSTOMER_CITY,
             customerCity,
-            50,
+            128,
             true
         )
 
@@ -100,7 +100,7 @@ class MGDepositRequest extends DepositRequestParameters {
         this._customerZipCode = new MGRequestParam(
             DepositRequestParameters.CUSTOMER_ZIP_CODE,
             customerZipCode,
-            10,
+            15,
             true
         )
 
@@ -114,35 +114,35 @@ class MGDepositRequest extends DepositRequestParameters {
         this._customerIP = new MGRequestParam(
             DepositRequestParameters.CUSTOMER_IP,
             customerIP,
-            20,
+            64,
             true
         )
 
         this._customerBankCode = new MGRequestParam(
             DepositRequestParameters.CUSTOMER_BANK_CODE,
             customerBankCode,
-            8,
+            11,
             false
         )
 
         this._redirectUrl = new MGRequestParam(
             DepositRequestParameters.REDIRECT_URL,
             redirectUrl,
-            128,
+            255,
             true
         )
 
         this._callbackUrl = new MGRequestParam(
             DepositRequestParameters.CALLBACK_URL,
             callbackUrl,
-            128,
+            255,
             false
         )
 
         this._checkoutUrl = new MGRequestParam(
             DepositRequestParameters.CHECKOUT_URL,
             checkoutUrl,
-            128,
+            255,
             true
         )
 

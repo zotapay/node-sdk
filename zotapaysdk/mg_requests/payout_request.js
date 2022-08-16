@@ -36,7 +36,7 @@ class MGPayoutRequest extends PayoutRequestParameters {
         this._orderAmount = new MGRequestParam(
             PayoutRequestParameters.ORDER_AMOUNT,
             orderAmount,
-            12,
+            24,
             true
         )
 
@@ -51,20 +51,20 @@ class MGPayoutRequest extends PayoutRequestParameters {
             PayoutRequestParameters.CUSTOMER_EMAIL,
             customerEmail,
             50,
-            false
+            true
         )
 
         this._customerFirstName = new MGRequestParam(
             PayoutRequestParameters.CUSTOMER_FIRST_NAME,
             customerFirstName,
-            50,
+            128,
             true
         )
 
         this._customerLastName = new MGRequestParam(
             PayoutRequestParameters.CUSTOMER_LAST_NAME,
             customerLastName,
-            50,
+            128,
             true
         )
 
@@ -78,21 +78,21 @@ class MGPayoutRequest extends PayoutRequestParameters {
         this._customerIP = new MGRequestParam(
             PayoutRequestParameters.CUSTOMER_IP,
             customerIP,
-            20,
+            64,
             true
         )
 
         this._customerBankCode = new MGRequestParam(
             PayoutRequestParameters.CUSTOMER_BANK_CODE,
             customerBankCode,
-            8,
+            11,
             false
         )
 
         this._customerBankAccountNumber = new MGRequestParam(
             PayoutRequestParameters.CUSTOMER_BANK_ACCOUNT_NUMBER,
             customerBankAccountNumber,
-            15,
+            64,
             true
         )
         this._customerBankAccountName = new MGRequestParam(
@@ -122,7 +122,7 @@ class MGPayoutRequest extends PayoutRequestParameters {
         this._customerBankRoutingNumber = new MGRequestParam(
             PayoutRequestParameters.CUSTOMER_BANK_ROUTING_NUMBER,
             customerBankRoutingNumber,
-            16,
+            64,
             false
         )
         this._customerBankProvince = new MGRequestParam(
@@ -141,7 +141,7 @@ class MGPayoutRequest extends PayoutRequestParameters {
         this._callbackUrl = new MGRequestParam(
             PayoutRequestParameters.CALLBACK_URL,
             callbackUrl,
-            128,
+            255,
             false
         )
 
@@ -156,7 +156,7 @@ class MGPayoutRequest extends PayoutRequestParameters {
             PayoutRequestParameters.CUSTOMER_COUNTRY_CODE,
             customerCountryCode,
             2,
-            false
+            true
         )
 
         this._customerPersonalID = new MGRequestParam(
