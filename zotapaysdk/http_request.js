@@ -1,4 +1,4 @@
-const axios = require("axios")
+const axios = require("axios");
 const https = require("https");
 
 function mgRequest(method="POST", url = null, data = null, headers = null) {
