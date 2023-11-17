@@ -20,7 +20,7 @@ The SDK covers all available functionality that ZotaPay's Merchant API exposes.
 
 ### Requirements
 * A functioning Zotapay Sandbox or Production account and related credentials
-* NodeJS 14 (or higher)
+* NodeJS 18 (or higher)
 
 ### Installation
 ```sh
