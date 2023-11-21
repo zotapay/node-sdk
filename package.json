@@ -1,27 +1,34 @@
 {
   "name": "zotapaysdk",
+  "author": "Zota Technology Pte LTD",
   "version": "1.3.1",
   "description": "This Node.js SDK provides all the necessary methods for integrating the Zotapay Merchant API.",
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zotapay/node-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zotapay/node-sdk/issues"
+  },
+  "homepage": "https://github.com/zotapay/node-sdk#readme",
+  "keywords": [
+    "zotapay",
+    "node.js",
+    "zota.com",
+    "payments",
+    "alternative-payments",
+    "sdk"
+  ],
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "test": "nyc --reporter=lcov mocha",
     "pretest": "eslint --ignore-path .gitignore ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zotapay/node-sdk.git"
+  "engines" : { 
+    "node" : ">=16.0.0"
   },
-  "keywords": [
-    "zotapay",
-    "node.js",
-    "sdk"
-  ],
-  "author": "Zota Technology LTD",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zotapay/node-sdk/issues"
-  },
-  "homepage": "https://github.com/zotapay/node-sdk#readme",
   "type": "commonjs",
   "devDependencies": {
     "chai": "^4.3.10",
