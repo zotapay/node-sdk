@@ -20,7 +20,7 @@
     "alternative-payments",
     "sdk"
   ],
-  "license": "ISC",
+  "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
     "test": "nyc --reporter=lcov mocha",
