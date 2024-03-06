@@ -94,6 +94,7 @@ class DepositRequestParameters extends CommonRequestParameters {
     static CUSTOMER_PHONE = "customerPhone"
     static CUSTOMER_IP = "customerIP"
     static CUSTOMER_BANK_CODE = "customerBankCode"
+    static CUSTOMER_BANK_ACCOUNT_NUMBER = "customerBankAccountNumber"
     static REDIRECT_URL = "redirectUrl"
     static CHECKOUT_URL = "checkoutUrl"
     static LANGUAGE = "language"

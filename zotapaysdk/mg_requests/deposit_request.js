@@ -16,7 +16,7 @@ class MGDepositRequest extends DepositRequestParameters {
                     customerCity = null, customerState = null, customerZipCode = null,
                     customerPhone = null, customerIP = null, customerBankCode = null,
                     redirectUrl = null, callbackUrl = null, checkoutUrl = null,
-                    customParam = null, language = null}) {
+                    customParam = null, language = null, customerBankAccountNumber = null}) {
 
         super()
 
@@ -122,6 +122,13 @@ class MGDepositRequest extends DepositRequestParameters {
             DepositRequestParameters.CUSTOMER_BANK_CODE,
             customerBankCode,
             11,
+            false
+        )
+        
+        this._customerBankAccountNumber = new MGRequestParam(
+            DepositRequestParameters.CUSTOMER_BANK_ACCOUNT_NUMBER,
+            customerBankAccountNumber,
+            64,
             false
         )
 
@@ -293,6 +300,15 @@ class MGDepositRequest extends DepositRequestParameters {
 
     setCustomerBankCode(value) {
         this._customerBankCode.setValue(value)
+        return this
+    }
+
+    get customerBankAccountNumber() {
+        return this._customerBankAccountNumber.paramValue
+    }
+
+    setCustomerBankAccountNumber(value) {
+        this._customerBankAccountNumber.setValue(value)
         return this
     }
 
