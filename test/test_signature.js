@@ -1,4 +1,5 @@
 const {MGDepositRequest} = require("../zotapaysdk/mg_requests/deposit_request");
+const {MGPayoutRequest} = require("../zotapaysdk/mg_requests/payout_request");
 const {generateTestOrder, generateTestPayout} = require("../zotapaysdk/testing_tools");
 const {DepositRequestParameters, PayoutRequestParameters} = require("../zotapaysdk/mg_requests/mg_request");
 const {MGClient} = require("../zotapaysdk/client");
@@ -32,7 +33,7 @@ describe("Signature tests", function () {
     })
 
     it("Payout signature", () => {
-        const expectedSignature = "b9d5c215e33c424292b589312af154ece3f156c5222786d032ca80b1eab229f0"
+        const expectedSignature = "98dd04a5a24729498818033ba491716332afe7a6d614c41daf8e92b209643f6f"
 
         let additionalObject = {}
         additionalObject[PayoutRequestParameters.MERCHANT_ORDER_ID] = "testMerchantId"
@@ -48,7 +49,7 @@ describe("Signature tests", function () {
         }
 
         const mgClient = new MGClient(clientProperties)
-        const payoutRequest = new MGDepositRequest(payoutPayload)
+        const payoutRequest = new MGPayoutRequest(payoutPayload)
 
         const signature = mgClient._generatePayoutRequestSignature(payoutRequest)
 
