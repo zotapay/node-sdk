@@ -4,9 +4,14 @@ const {generateTestOrder, generateTestPayout} = require("../zotapaysdk/testing_t
 const {DepositRequestParameters, PayoutRequestParameters} = require("../zotapaysdk/mg_requests/mg_request");
 const {MGClient} = require("../zotapaysdk/client");
 
-const {assert} = require("chai");
+
 describe("Signature tests", function () {
 
+    var assert;
+    before(async () => {
+        const chai = await import('chai');
+        assert = chai.assert;
+    });
 
     it("Deposit signature", () => {
         const expectedSignature = "4289ea00fd365d9b59689745b743839f101dc679f9e420022edac099290b161f"
@@ -55,4 +60,4 @@ describe("Signature tests", function () {
 
         assert(expectedSignature === signature, "There is a mismatch in signatures")
     })
-})
+});
