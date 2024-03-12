@@ -3,7 +3,6 @@
   "author": "Zota Technology Pte LTD",
   "version": "1.3.1",
   "description": "This Node.js SDK provides all the necessary methods for integrating the Zotapay Merchant API.",
-  
   "repository": {
     "type": "git",
     "url": "https://github.com/zotapay/node-sdk.git"
@@ -26,12 +25,12 @@
     "test": "nyc --reporter=lcov mocha",
     "pretest": "eslint --ignore-path .gitignore ."
   },
-  "engines" : { 
-    "node" : ">=16.0.0"
+  "engines": {
+    "node": ">=16.0.0"
   },
   "type": "commonjs",
   "devDependencies": {
-    "chai": "^4.3.10",
+    "chai": "^5.1.0",
     "eslint": "^8.53.0",
     "mocha": "^10.2.0",
     "nock": "^13.3.8",
