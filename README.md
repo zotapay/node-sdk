@@ -1,34 +1,34 @@
 [![NPM version](https://img.shields.io/badge/zotasdk-v1.2.1-blue)](https://www.npmjs.com/package/zotapaysdk)
-[![codecov](https://codecov.io/gh/zotapay/node-sdk/branch/main/graph/badge.svg?token=NdEjuAL8eN)](https://codecov.io/gh/zotapay/node-sdk)
-![](https://img.shields.io/badge/NodeJS-14%2B-blue)
+[![codecov](https://codecov.io/gh/zota/node-sdk/branch/main/graph/badge.svg?token=NdEjuAL8eN)](https://codecov.io/gh/zotapay/node-sdk)
+![](https://img.shields.io/badge/NodeJS-18%2B-blue)
 ![unnamed](https://user-images.githubusercontent.com/92689934/184654665-59808ddc-ed33-4347-b274-0e0c94368ce9.png)
 
 # Official NodeJS REST API SDK
-This is the **official** page of the [Zotapay](http://www.zotapay.com) NodeJS SDK. It is intended to be used by
-developers who run modern NodeJS applications and would like to integrate our next generation payments platform.
+This is the **official** page of the [Zota](http://www.zota.com) NodeJS SDK. It is intended to be used by
+developers who run modern NodeJS applications and would like to integrate our next-generation payments platform.
 
 ## REST API Docs
 
-> **[Official Deposit Documentation](https://doc.zotapay.com/deposit/1.0/#introduction)**
+> **[Official Deposit Documentation](https://doc.zota.com/deposit/1.0/#introduction)**
 
-> **[Official Payout Documentation](https://doc.zotapay.com/payout/1.0/#introduction)**
+> **[Official Payout Documentation](https://doc.zota.com/payout/1.0/#introduction)**
 
 ## Introduction
-This NodeJS SDK provides all the necessary methods for integrating the Zotapay Merchant API.
+This NodeJS SDK provides all the necessary methods for integrating the Zota Merchant API.
 
-The SDK covers all available functionality that ZotaPay's Merchant API exposes.
+The SDK covers all available functionality that Zota's Merchant API exposes.
 
 ### Requirements
-* A functioning Zotapay Sandbox or Production account and related credentials
+* A functioning Zota Sandbox or Production account and related credentials
 * NodeJS 18 (or higher)
 
 ### Installation
 ```sh
-npm install zotapaysdk
+npm install zotasdk
 ```
 ## Configuration
 
-[API CONFIGURATION DOCS](https://doc.zotapay.com/deposit/1.0/?javascript#before-you-begin)
+[API CONFIGURATION DOCS](https://doc.zota.com/deposit/1.0/?javascript#before-you-begin)
 
 Credentials for the SDK can be passed in 3 different ways:
 1. To the `MGClient` itself
@@ -39,17 +39,17 @@ This part of the documentation will guide you on how to configure and use this S
 
 ### Before you begin
 
-To use this API, obtain the following credentials from Zotapay:
+To use this API, obtain the following credentials from Zota:
 
 ```node
 MerchantID	        - A merchant unique identifier, used for identification.
 MerchantSecretKey	- A secret key to keep privately and securely, used for authentication.
 EndpointID	        - One or more unique endpoint identifiers to use in API requests.
 ```
-Contact [Zotapay](https://zotapay.com/contact/) to start your onboarding process and obtain all the credentials.
+Contact [Zota](https://zota.com/contact/) to start your onboarding process and obtain all the credentials.
 
 ### API Url
-There are two environments to use with the Zotapay API:
+There are two environments to use with the Zota API:
 
 > Sandbox environment, used for integration and testing purposes.
 `https://api.zotapay-sandbox.com`
@@ -60,17 +60,17 @@ There are two environments to use with the Zotapay API:
 
 ### Configuration in the code
 
-The implementation fo the Zotapay API SDK depends on creating an instance of the `MGClient`. First priority
+The implementation fo the Zota API SDK depends on creating an instance of the `MGClient`. First priority
 configuration is the one passed to the client itself.
 
 Example:
 ```node
-import {MGClient} from "zotapaysdk";
+import {MGClient} from "zotasdk";
 
-const parameters = {merchantID=<MerchantID as received from Zotapay>, 
-    merchantSecretKey=<MerchantSecretKey as received from Zotapay>, 
-    endpointID=<EndpointID as received from Zotapay>, 
-    requestUrl=<MGClient.LIVE_API_URL or MGClient.SANDBOX_API_URL or "https://api.zotapay-sandbox.com"...}
+const parameters = {merchantID=<MerchantID as received from Zota>, 
+    merchantSecretKey=<MerchantSecretKey as received from Zota>, 
+    endpointID=<EndpointID as received from Zota>, 
+    requestUrl=<MGClient.LIVE_API_URL or MGClient.SANDBOX_API_URL or "https://api.zota-sandbox.com"...}
     
 const client = new MGClient()
 ```
@@ -79,10 +79,10 @@ const client = new MGClient()
 There are 4 environment variables that need to be set for the API SDK to be configured correctly:
 
 ```node
-ZOTAPAY_MERCHANT_ID             - MerchantID as received from Zotapay
-ZOTAPAY_MERCHANT_SECRET_KEY     - MerchantSecretKey as received from Zotapay
-ZOTAPAY_ENDPOINT_ID             - EndpointID as received from Zotapay
-ZOTAPAY_REQUEST_URL             - https://api.zotapay-sandbox.com or https://api.zotapay.com
+ZOTA_MERCHANT_ID             - MerchantID as received from Zota
+ZOTA_MERCHANT_SECRET_KEY     - MerchantSecretKey as received from Zota
+ZOTA_ENDPOINT_ID             - EndpointID as received from Zota
+ZOTA_REQUEST_URL             - https://api.zotapay-sandbox.com or https://api.zotapay.com
 ```
 
 ### Configuration file
@@ -91,9 +91,9 @@ Configuration parameters can be passed through a `mg_config.js` file placed in t
 Example of a '~/mg_config.js' :
 ```node
 exports.config = {
-    merchantID : <MerchantID as received from Zotapay>,
-    merchantSecretKey : <MerchantSecretKey as received from Zotapay>,
-    endpointID : <EndpointID as received from Zotapay>,
+    merchantID : <MerchantID as received from Zota>,
+    merchantSecretKey : <MerchantSecretKey as received from Zota>,
+    endpointID : <EndpointID as received from Zota>,
     requestUrl : <"https://api.zotapay-sandbox.com" or https://api.zotapay.com>,
 }
 ```
@@ -101,7 +101,7 @@ exports.config = {
 ## Usage
 In order to use the SDK we need to instantiate a client:
 ```node
-import {MGClient} from "zotapaysdk";
+import {MGClient} from "zotasdk";
 
 const mgClient = new MGClient()
 ```
@@ -111,7 +111,7 @@ const mgClient = new MGClient()
 A deposit request can be generated in two different ways:
 
 ```node
-import {MGDepositRequest} from "zotapaysdk";
+import {MGDepositRequest} from "zotasdk";
 
 const depositParameters = {
     merchantOrderID : "QvE8dZshpKhaOmHY", 
@@ -139,7 +139,7 @@ or alternatively
 
 
 ```node 
-import {MGDepositRequest} from "zotapaysdk";
+import {MGDepositRequest} from "zotasdk";
 
 const exampleDepositRequest = new MGDepositRequest()
     .setMerchantOrderID("QvE8dZshpKhaOmHY")
@@ -161,7 +161,7 @@ const exampleDepositRequest = new MGDepositRequest()
     .setCheckoutUrl("https://www.example-merchant.com/account/deposit/?uid=e139b447")
 ```
 
-Sending the request to Zotapay happens through the client:
+Sending the request to Zota happens through the client:
 
 ```node
 mgClient.sendDepositRequest(exampleDepositRequest)
@@ -176,8 +176,8 @@ mgClient.sendDepositRequest(exampleDepositRequest)
         }})
 ```
 
-In order to send a `Credit Card Deposit` we need to append the appropriate [Credit Card Params](https://doc.zotapay.com/deposit/1.0/?javascript#card-payment-integration-2)
-which is achieved through sending a `MGCardDepositRequest`
+In order to send a `Credit Card Deposit` we need to append the appropriate [Credit Card Params](https://doc.zota.com/deposit/1.0/?javascript#card-payment-integration-2)
+which is achieved through sending an `MGCardDepositRequest`
 
 ```node
 const exampleCCDepositRequest = new MGCardDepositRequest({
@@ -219,9 +219,9 @@ const exampleCCDepositRequest = new MGCardDepositRequest({
 ```
 
 ### Working with `Deposit Response`
-Each deposit attempt against a Zotapay returns either a `MGDepositResponse` or `MGCardDepositResponse`.
+Each deposit attempt against a Zota returns either an `MGDepositResponse` or `MGCardDepositResponse`.
 
-The above objects are simply a wrapper around the standard HTTP response as described [here](https://doc.zotapay.com/deposit/1.0/?javascript#issue-a-deposit-request).
+The above objects are simply a wrapper around the standard HTTP response as described [here](https://doc.zota.com/deposit/1.0/?javascript#issue-a-deposit-request).
 
 The response classes contain an additional helper method that validates the signature of the response when provided with a `merchantSecretKey`
 
@@ -231,7 +231,7 @@ Sending a payout request is almost identical to sending a deposit request.
 The request is built:
 
 ```node
-import {MGPayoutRequest} from "zotapaysdk";;
+import {MGPayoutRequest} from "zotasdk";
 
 const payoutParameters = {
     merchantOrderID:"TbbQzewLWwDW6222sadaaasdasdasdasd23",
@@ -282,10 +282,10 @@ mgClient.sendPayoutRequest(examplePayoutRequest)
 The client returns `MGPayoutResponse` which is again a wrapper around the standard HTTP response.
 
 ## Status Check
-Merchant should issue an Order Status Request to get the most up-to-date status of customer’s order transaction.
+Merchants should issue an Order Status Request to get the most up-to-date status of the customer’s order transactions.
 
 ```node
-import {MGOrderStatusRequest} from "zotapaysdk";
+import {MGOrderStatusRequest} from "zotasdk";
 
 const statusCheckPayload = {
     merchantOrderID: "testMerchantOrderID", 
@@ -307,15 +307,15 @@ mgClient.sendOrderStatusRequest(exampleStatusCheckRequest)
 
 ```
 ## Callbacks
-`MGCallback` is a class that parses the raw HTTP Request sent from Zotapay to the configured endpoint. It's purpose
+`MGCallback` is a class that parses the raw HTTP Request sent from Zota to the configured endpoint. It's purpose
 is to make working with callbacks manageable.
 
 
 ## Validations
 The `MGRequest` class implements a `validate()` method which can be used for parameter validation of the request
-offline before the request is being sent. It's purpose is to check whether all the values passsed to the different
-parameters is in-line with what Zotapay's endpoint expects. See the API DOCS for more info and guidance about the
+offline before the request is sent. It's purpose is to check whether all the values passed to the different
+parameters are in line with what Zota's endpoint expects. See the API DOCS for more info and guidance about the
 format of the different parameters.
 
 ## Test Coverage
-[![codecov](https://codecov.io/gh/zotapay/node-sdk/branch/main/graphs/tree.svg?width=650&height=150&src=pr&token=NdEjuAL8eN)](https://codecov.io/gh/zotapay/node-sdk/)
+[![codecov](https://codecov.io/gh/zota/node-sdk/branch/main/graphs/tree.svg?width=650&height=150&src=pr&token=NdEjuAL8eN)](https://codecov.io/gh/zota/node-sdk/)
