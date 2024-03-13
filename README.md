@@ -1,5 +1,5 @@
-[![NPM version](https://img.shields.io/badge/zotasdk-v1.2.1-blue)](https://www.npmjs.com/package/zotapaysdk)
-[![codecov](https://codecov.io/gh/zota/node-sdk/branch/main/graph/badge.svg?token=NdEjuAL8eN)](https://codecov.io/gh/zotapay/node-sdk)
+[![NPM version](https://img.shields.io/badge/zotasdk-v1.2.1-blue)](https://www.npmjs.com/package/zotasdk)
+[![codecov](https://codecov.io/gh/zota/node-sdk/branch/main/graph/badge.svg?token=NdEjuAL8eN)](https://codecov.io/gh/zota/node-sdk)
 ![](https://img.shields.io/badge/NodeJS-18%2B-blue)
 ![unnamed](https://user-images.githubusercontent.com/92689934/184654665-59808ddc-ed33-4347-b274-0e0c94368ce9.png)
 

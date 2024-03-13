@@ -1,5 +1,5 @@
 
-const config = require("./../zotapaysdk/config.js");
+const config = require("./../zotasdk/config.js");
 const MGCredentialsManager = config.MGCredentialsManager;
 const CredentialKeys = config.CredentialKeys;
 

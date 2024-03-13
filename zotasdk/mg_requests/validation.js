@@ -1,6 +1,6 @@
 function defaultValidationFunction(paramName, paramValue, maxSize, required) {
     /*
-    * Performs the general validation as defined by ZotaPay's API
+    * Performs the general validation as defined by Zota's API
     *
     * @param {String} paramName Name of the parameter
     * @param {String} paramValue Value of the parameter

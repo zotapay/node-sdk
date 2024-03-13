@@ -12,7 +12,7 @@ class MGDepositResponse extends  MGResponse {
 
     constructor(httpResponse) {
         /*
-        * Object that wraps around the ZotaPay Deposit Request response.
+        * Object that wraps around the Zota Deposit Request response.
         * Container class for the deposit request response.
         *
         * Example response from the API:

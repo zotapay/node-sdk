@@ -1,4 +1,4 @@
-const MGRequestParam = require("../zotapaysdk/mg_requests/objects.js").MGRequestParam
+const MGRequestParam = require("../zotasdk/mg_requests/objects.js").MGRequestParam
 
 
 describe("MGRequestParam tests", function () {

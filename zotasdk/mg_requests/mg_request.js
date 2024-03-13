@@ -3,7 +3,7 @@ const MGRequestParam = require("./objects.js").MGRequestParam
 class ValidateParameters {
 
     /*
-    * Used as a base class for requests against the ZotaPay API
+    * Used as a base class for requests against the Zota API
     * */
     _extraValidations() {
         /*

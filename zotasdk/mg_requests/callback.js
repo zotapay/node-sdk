@@ -39,7 +39,7 @@ class MGCallback {
         /*
         * Validates whether the signature returned in the callback is OK.
         *
-        * @param {String} merchantSecretKey The secret key as provided by ZotaPay
+        * @param {String} merchantSecretKey The secret key as provided by Zota
         * */
         const signature = util.format("%s%s%s%s%s%s%s", this.endpointID, this.orderID, this.merchantOrderID,
             this.status, this.amount, this.customerEmail, merchantSecretKey)

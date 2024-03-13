@@ -6,8 +6,8 @@ const MGRequestParam = require("./objects.js").MGRequestParam
 class MGDepositRequest extends DepositRequestParameters {
     /*
     * Class containing all the parameters and logic for creating a non-CC
-    * deposit request through the Zotapay API SDK.
-    * See https://doc.zotapay.com/deposit/1.0/?python#deposit-request for more info.
+    * deposit request through the Zota API SDK.
+    * See https://doc.zota.com/deposit/1.0/?python#deposit-request for more info.
     *
     * */
     constructor({merchantOrderID = null, merchantOrderDesc = null, orderAmount = null,
