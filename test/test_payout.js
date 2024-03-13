@@ -2,12 +2,20 @@ const {MockResponse, generateTestPayoutWithOkResponse,
     generateTestPayoutWithNotOkResponse, generateTestPayout
 } = require("../zotapaysdk/testing_tools");
 const {MGClient} = require("../zotapaysdk/client");
-const nock = require("nock");
-const {assert} = require("chai");
 const {MGPayoutResponse} = require("../zotapaysdk/mg_requests/payout_response");
 const {MGPayoutRequest} = require("../zotapaysdk/mg_requests/payout_request");
 
+const nock = require("nock");
+
+
 describe("Payout tests", function () {
+    
+    var assert;
+    before(async () => {
+        const chai = await import('chai');
+        assert = chai.assert;
+    });
+    
     it("Payout test success", async () => {
 
         let [payoutPayload, responsePayload] = generateTestPayoutWithOkResponse(500, "MYR")
@@ -90,4 +98,4 @@ describe("Payout tests", function () {
         }
 
     })
-    });
+});

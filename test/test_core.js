@@ -1,8 +1,13 @@
-const assert = require("chai").assert
 const MGRequestParam = require("../zotapaysdk/mg_requests/objects.js").MGRequestParam
+
 
 describe("MGRequestParam tests", function () {
 
+    var assert;
+    before(async () => {
+        const chai = await import('chai');
+        assert = chai.assert;
+    });
 
     it("MGRequestParam success test", function () {
 

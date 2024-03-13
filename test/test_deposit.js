@@ -1,15 +1,22 @@
-const {assert, expect} = require("chai");
 const {generateTestOrderWithOkResponse, MockResponse, generateTestOrder, TestCreditCards} = require("../zotapaysdk/testing_tools");
 const {MGClient} = require("../zotapaysdk/client");
 const {MGDepositRequest} = require("../zotapaysdk/mg_requests/deposit_request");
 const {MGDepositResponse} = require("../zotapaysdk/mg_requests/deposit_response");
-
-const nock = require("nock")
 const {DepositRequestParameters} = require("../zotapaysdk/mg_requests/mg_request");
 const {MGCardDepositRequest} = require("../zotapaysdk/mg_requests/card_deposit_request");
 const {MGCardDepositResponse} = require("../zotapaysdk/mg_requests/card_deposit_response");
+
+const nock = require("nock")
+
+
 describe("Deposit tests", function () {
 
+    var assert, expect;
+    before(async () => {
+        const chai = await import('chai');
+        assert = chai.assert;
+        expect = chai.expect;
+    });
 
     it("Deposit test success", async () => {
 

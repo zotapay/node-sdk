@@ -2,12 +2,20 @@ const {MockResponse, generateOrderStatusCheckOkPayload,
     generateOrderStatusCheckNotOkPayload
 } = require("../zotapaysdk/testing_tools");
 const {MGClient} = require("../zotapaysdk/client");
-const nock = require("nock");
-const {assert} = require("chai");
 const {MGOrderStatusRequest} = require("../zotapaysdk/mg_requests/order_status_request");
 const {MGOrderStatusResponse} = require("../zotapaysdk/mg_requests/order_status_response");
 
+const nock = require("nock");
+
+
 describe("Order Status tests", function () {
+    
+    var assert;
+    before(async () => {
+        const chai = await import('chai');
+        assert = chai.assert;
+    });
+
     it("Order status test success", async () => {
 
         const orderStatusCheckParameters = {

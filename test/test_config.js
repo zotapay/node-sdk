@@ -3,15 +3,16 @@ const config = require("./../zotapaysdk/config.js");
 const MGCredentialsManager = config.MGCredentialsManager;
 const CredentialKeys = config.CredentialKeys;
 
-const expect = require("chai").expect
 const sinon = require("sinon");
 
+
 describe("Credential configuration tests", function () {
-
-
-    var env
-    // mocking an environment
-    before(function () {
+    
+    var expect;
+    var env;
+    before(async () => {
+        const chai = await import('chai');
+        expect = chai.expect;
         env = process.env;
         sinon.stub(MGCredentialsManager.prototype, "getConfig").callsFake( () => { return "";});
     });
