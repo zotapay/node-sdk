@@ -9,7 +9,7 @@ class MGPayoutResponse extends MGResponse {
     static ORDER_ID = 'orderID'
     static MESSAGE = "message"
     /*
-        * Object that wraps around the ZotaPay Deposit Request response.
+        * Object that wraps around the Zota Deposit Request response.
         * Container class for the deposit request response.
         *
         * @param {Object} httpResponse The response from the deposit request

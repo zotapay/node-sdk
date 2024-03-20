@@ -1,9 +1,9 @@
 const {MockResponse, generateOrderStatusCheckOkPayload,
     generateOrderStatusCheckNotOkPayload
-} = require("../zotapaysdk/testing_tools");
-const {MGClient} = require("../zotapaysdk/client");
-const {MGOrderStatusRequest} = require("../zotapaysdk/mg_requests/order_status_request");
-const {MGOrderStatusResponse} = require("../zotapaysdk/mg_requests/order_status_response");
+} = require("../zotasdk/testing_tools");
+const {MGClient} = require("../zotasdk/client");
+const {MGOrderStatusRequest} = require("../zotasdk/mg_requests/order_status_request");
+const {MGOrderStatusResponse} = require("../zotasdk/mg_requests/order_status_response");
 
 const nock = require("nock");
 

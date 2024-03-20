@@ -1,10 +1,10 @@
-const {generateTestOrderWithOkResponse, MockResponse, generateTestOrder, TestCreditCards} = require("../zotapaysdk/testing_tools");
-const {MGClient} = require("../zotapaysdk/client");
-const {MGDepositRequest} = require("../zotapaysdk/mg_requests/deposit_request");
-const {MGDepositResponse} = require("../zotapaysdk/mg_requests/deposit_response");
-const {DepositRequestParameters} = require("../zotapaysdk/mg_requests/mg_request");
-const {MGCardDepositRequest} = require("../zotapaysdk/mg_requests/card_deposit_request");
-const {MGCardDepositResponse} = require("../zotapaysdk/mg_requests/card_deposit_response");
+const {generateTestOrderWithOkResponse, MockResponse, generateTestOrder, TestCreditCards} = require("../zotasdk/testing_tools");
+const {MGClient} = require("../zotasdk/client");
+const {MGDepositRequest} = require("../zotasdk/mg_requests/deposit_request");
+const {MGDepositResponse} = require("../zotasdk/mg_requests/deposit_response");
+const {DepositRequestParameters} = require("../zotasdk/mg_requests/mg_request");
+const {MGCardDepositRequest} = require("../zotasdk/mg_requests/card_deposit_request");
+const {MGCardDepositResponse} = require("../zotasdk/mg_requests/card_deposit_response");
 
 const nock = require("nock")
 

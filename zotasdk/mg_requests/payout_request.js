@@ -4,8 +4,8 @@ const MGRequestParam = require("./objects.js").MGRequestParam
 class MGPayoutRequest extends PayoutRequestParameters {
     /*
     * Class containing all the parameters and logic for creating a
-    * payout request through the Zotapay API SDK.
-    * See https://doc.zotapay.com/payout/1.1/?javascript#payout-request for more info.
+    * payout request through the Zota API SDK.
+    * See https://doc.zota.com/payout/1.1/?javascript#payout-request for more info.
     *
     * */
     constructor({merchantOrderID = null, merchantOrderDesc = null, orderAmount = null,

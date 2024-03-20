@@ -21,8 +21,8 @@ class MGClient {
     static SANDBOX_API_URL = "https://api.zotapay-sandbox.com";
 
     /*
-    * Main client for working with Zotapay's API.
-    * See more info https://doc.zotapay.com/deposit/1.0/?javascript#introduction
+    * Main client for working with zota's API.
+    * See more info https://doc.zota.com/deposit/1.0/?javascript#introduction
     *
     * @param {Object} Object Object used for initializing the MGClient class
     * @param {String} Object.merchantID A merchant unique IDentifier, used for IDentification.
@@ -76,7 +76,7 @@ class MGClient {
     get depositRequestUrl() {
         /*
         * Returns the url where deposit requests should be sent.
-        * https://doc.zotapay.com/deposit/1.0/?javascript#deposit-request
+        * https://doc.zota.com/deposit/1.0/?javascript#deposit-request
         * @return {String} 
         * */
         return MGUrlsFormatter.getDepositUrl(this.endpointID)
@@ -85,7 +85,7 @@ class MGClient {
     get orderStatusRequestUrl() {
         /*
         * Returns the url where order status check requests should be sent.
-        * https://doc.zotapay.com/deposit/1.0/?javascript#order-status-request
+        * https://doc.zota.com/deposit/1.0/?javascript#order-status-request
         * @return {String} 
         * */
         return MGUrlsFormatter.getOrderStatusUrl()
@@ -94,7 +94,7 @@ class MGClient {
     get payoutRequestUrl() {
         /*
         * Returns the url where payout requests should be sent.
-        * https://mg-docs.zotapay.com/payout/1.0/#payout-request
+        * https://mg-docs.zota.com/payout/1.0/#payout-request
         * @return {String} 
         * */
         return MGUrlsFormatter.getPayoutUrl(this.endpointID)
@@ -102,8 +102,8 @@ class MGClient {
 
     _generateDepositRequestSignature(depositRequest) {
         /*
-        * Generates the signature for Deposit Requests as expected by Zotapay's API.
-        * See https://doc.zotapay.com/deposit/1.0/?javascript#signature
+        * Generates the signature for Deposit Requests as expected by Zota's API.
+        * See https://doc.zota.com/deposit/1.0/?javascript#signature
         * 
         * @param {MGDepositRequest} depositRequest An instance of the Deposit Request that is to be signed
         * @return {String}
@@ -116,8 +116,8 @@ class MGClient {
 
     _generateOrderStatusRequestSignature(orderStatusRequest, ts) {
         /*
-        * Generates the signature for Order Status Requests as expected by Zotapay's API.
-        * See https://doc.zotapay.com/deposit/1.0/?python#signature-2
+        * Generates the signature for Order Status Requests as expected by Zota's API.
+        * See https://doc.zota.com/deposit/1.0/?python#signature-2
         *
         * @param {MGOrderStatusRequest} orderStatusRequest An instance of the status request
         * @param {String} ts a timestamp for the signature (as required)
@@ -131,8 +131,8 @@ class MGClient {
 
     _generatePayoutRequestSignature(payoutRequest) {
         /*
-        * Generates the signature for Payout Requests as expected by ZotaPay's API.
-        * See https://mg-docs.zotapay.com/payout/1.0/#signature
+        * Generates the signature for Payout Requests as expected by Zota's API.
+        * See https://mg-docs.zota.com/payout/1.0/#signature
         *
         * @param {MGPayoutRequest} payoutRequest An instance of the payout request
         * @return {String}
@@ -168,7 +168,7 @@ class MGClient {
     _assertAllValuesAsStrings(payload) {
         /*
         * Iterates over the request payload and ensures that all values are cast to strings
-        * as expected by the ZotaPay API.
+        * as expected by the Zota API.
         *
         * @param {Map<String,undefined>} A dict of parameters that are to be send as the API call payload.
         * @return {Map<String,String>} The same payload dict with all values converted to strings.
@@ -204,7 +204,7 @@ class MGClient {
 
     _sendDepositRequest(depositRequest) {
         /*
-        * Sends a general deposit request to the ZotaPay API
+        * Sends a general deposit request to the Zota API
         *
         * @param {MGDepositRequest} depositRequest See class implementation for more detailed information.
         * */
@@ -219,7 +219,7 @@ class MGClient {
 
     _sendCreditCardDepositRequest(depositRequest) {
         /*
-        * Sends a card deposit request to the ZotaPay API
+        * Sends a card deposit request to the Zota API
         *
         * @param {MGCardDepositRequest} depositRequest See class implementation for more detailed information.
         * */
@@ -235,7 +235,7 @@ class MGClient {
 
     sendDepositRequest(depositRequest) {
         /*
-        * Sends a general deposit request to the ZotaPay API
+        * Sends a general deposit request to the Zota API
         *
         * @param {MGDepositRequest} depositRequest See class implementation for more detailed information.
         * */
@@ -253,7 +253,7 @@ class MGClient {
 
     sendOrderStatusRequest(orderStatusRequest) {
         /*
-        * Sends a order status request to the ZotaPay API
+        * Sends a order status request to the Zota API
         *
         * @param {MGOrderStatusRequest} orderStatusRequest See class implementation for more detailed information.
         * */
@@ -268,7 +268,7 @@ class MGClient {
 
     sendPayoutRequest(payoutRequest) {
         /*
-        * Sends a payout request to the ZotaPay API
+        * Sends a payout request to the Zota API
         *
         * @param {MGPayoutRequest} payoutRequest See class implementation for more detailed information.
         * */

@@ -1,5 +1,5 @@
-const {MGClient} = require("../zotapaysdk/client");
-const {MGPayoutRequest} = require("../zotapaysdk/mg_requests/payout_request")
+const {MGClient} = require("../zotasdk/client");
+const {MGPayoutRequest} = require("../zotasdk/mg_requests/payout_request")
 
 const client = new MGClient()
 

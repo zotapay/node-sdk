@@ -1,6 +1,6 @@
 const os = require("os")
 
-const ZOTAPAY_REST_API_VERSION = "v1"
+const ZOTA_REST_API_VERSION = "v1"
 /*
 Class with all the credential names that need to be set.
  */
@@ -11,10 +11,10 @@ class CredentialKeys{
     * */
 
     // Environmental Variable Names
-    static ENV_MERCHANT_ID = "ZOTAPAY_MERCHANT_ID"
-    static ENV_MERCHANT_SECRET_KEY = "ZOTAPAY_MERCHANT_SECRET_KEY"
-    static ENV_ENDPOINT_ID = "ZOTAPAY_ENDPOINT_ID"
-    static ENV_REQUEST_URL = "ZOTAPAY_REQUEST_URL"
+    static ENV_MERCHANT_ID = "ZOTA_MERCHANT_ID"
+    static ENV_MERCHANT_SECRET_KEY = "ZOTA_MERCHANT_SECRET_KEY"
+    static ENV_ENDPOINT_ID = "ZOTA_ENDPOINT_ID"
+    static ENV_REQUEST_URL = "ZOTA_REQUEST_URL"
 
     // Configuration File Variable Names
     static CONFIG_MERCHANT_ID = "merchantID"
@@ -29,7 +29,7 @@ class MGCredentialsManager {
     * Class containing logic for dealing with credentials for the Zota API.
     * Parses the credentials from the keyword parameters, environment variables
     * or a config file in this strict order.
-    * See Also https://doc.zotapay.com/deposit/1.0/?javascript#before-you-begin
+    * See Also https://doc.zota.com/deposit/1.0/?javascript#before-you-begin
     *
     * @param {Object} Object Object used for initializing the MGClient class
     * @param {String} Object.merchantID A merchant unique IDentifier, used for IDentification.
@@ -156,5 +156,5 @@ class MGCredentialsManager {
 module.exports = {
     MGCredentialsManager: MGCredentialsManager,
     CredentialKeys: CredentialKeys,
-    ZOTAPAY_REST_API_VERSION: ZOTAPAY_REST_API_VERSION
+    ZOTA_REST_API_VERSION: ZOTA_REST_API_VERSION
 }

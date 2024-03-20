@@ -1,7 +1,7 @@
-const {CardDepositRequestParameters, DepositRequestParameters, PayoutRequestParameters} = require("../zotapaysdk/mg_requests/mg_request.js")
-const {MGDepositResponse} = require("../zotapaysdk/mg_requests/deposit_response")
-const {MGCardDepositResponse} = require("../zotapaysdk/mg_requests/card_deposit_response")
-const {MGOrderStatus} = require("../zotapaysdk/mg_requests/order_status_request")
+const {CardDepositRequestParameters, DepositRequestParameters, PayoutRequestParameters} = require("../zotasdk/mg_requests/mg_request.js")
+const {MGDepositResponse} = require("../zotasdk/mg_requests/deposit_response")
+const {MGCardDepositResponse} = require("../zotasdk/mg_requests/card_deposit_response")
+const {MGOrderStatus} = require("../zotasdk/mg_requests/order_status_request")
 
 const crypto = require('crypto');
 const {MGPayoutResponse} = require("./mg_requests/payout_response");
@@ -21,7 +21,7 @@ class MockResponse {
 
 class TestCreditCards {
     /*
-    * Contains all the test cards that can be used against the ZotaPay Sandbox API
+    * Contains all the test cards that can be used against the Zota Sandbox API
     * */
 
     static visaApprovedNo3d() {

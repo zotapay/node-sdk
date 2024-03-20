@@ -5,7 +5,7 @@ const MGRequestParam = require("./objects.js").MGRequestParam
 class MGCardDepositRequest extends MGDepositRequest {
     /*
     * Class defining all that is necessary for sending a Credit Card Deposit Request.
-    * See Also https://doc.zotapay.com/deposit/1.0/#card-payment-integration-2
+    * See Also https://doc.zota.com/deposit/1.0/#card-payment-integration-2
     *
     * @param {Object} Object Object that defines all the needed params for the request
     * */

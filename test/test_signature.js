@@ -1,8 +1,8 @@
-const {MGDepositRequest} = require("../zotapaysdk/mg_requests/deposit_request");
-const {MGPayoutRequest} = require("../zotapaysdk/mg_requests/payout_request");
-const {generateTestOrder, generateTestPayout} = require("../zotapaysdk/testing_tools");
-const {DepositRequestParameters, PayoutRequestParameters} = require("../zotapaysdk/mg_requests/mg_request");
-const {MGClient} = require("../zotapaysdk/client");
+const {MGDepositRequest} = require("../zotasdk/mg_requests/deposit_request");
+const {MGPayoutRequest} = require("../zotasdk/mg_requests/payout_request");
+const {generateTestOrder, generateTestPayout} = require("../zotasdk/testing_tools");
+const {DepositRequestParameters, PayoutRequestParameters} = require("../zotasdk/mg_requests/mg_request");
+const {MGClient} = require("../zotasdk/client");
 
 
 describe("Signature tests", function () {

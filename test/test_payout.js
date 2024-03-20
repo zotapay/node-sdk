@@ -1,9 +1,9 @@
 const {MockResponse, generateTestPayoutWithOkResponse,
     generateTestPayoutWithNotOkResponse, generateTestPayout
-} = require("../zotapaysdk/testing_tools");
-const {MGClient} = require("../zotapaysdk/client");
-const {MGPayoutResponse} = require("../zotapaysdk/mg_requests/payout_response");
-const {MGPayoutRequest} = require("../zotapaysdk/mg_requests/payout_request");
+} = require("../zotasdk/testing_tools");
+const {MGClient} = require("../zotasdk/client");
+const {MGPayoutResponse} = require("../zotasdk/mg_requests/payout_response");
+const {MGPayoutRequest} = require("../zotasdk/mg_requests/payout_request");
 
 const nock = require("nock");
 

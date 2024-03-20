@@ -6,7 +6,7 @@ const MGRequestParam = require("./objects.js").MGRequestParam
 class MGOrderStatus {
     /*
     * Definition of all the possible statuses of an order.
-    * See https://mg-docs.zotapay.com/payout/1.0/#common-resources
+    * See https://doc.zota.com/payout/1.0/#common-resources
     * */
     static CREATED = "CREATED"
     static PROCESSING = "PROCESSING"
@@ -21,7 +21,7 @@ class MGOrderStatus {
 class MGOrderStatusRequest extends OrderStatusRequestParameters {
     /*
     * Implementation of the Order Status Request class.
-    * See Also https://doc.zotapay.com/deposit/1.0/?javascript#issue-an-order-status-request*/
+    * See Also https://doc.zota.com/deposit/1.0/?javascript#issue-an-order-status-request*/
     constructor({merchantOrderID = null, orderID = null}) {
         super();
 
