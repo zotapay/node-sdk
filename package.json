@@ -5,7 +5,7 @@
   "description": "This Node.js SDK provides the necessary methods for integrating Zota's Merchant API.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zota/node-sdk.git"
+    "url": "git+https://github.com/zota/node-sdk.git"
   },
   "bugs": {
     "url": "https://github.com/zota/node-sdk/issues"
@@ -41,5 +41,9 @@
   },
   "dependencies": {
     "axios": "^1.6.8"
+  },
+  "directories": {
+    "example": "examples",
+    "test": "test"
   }
 }
