@@ -33,7 +33,7 @@
   "type": "commonjs",
   "devDependencies": {
     "chai": "^5.1.0",
-    "eslint": "^8.53.0",
+    "eslint": "^9.4.0",
     "mocha": "^10.3.0",
     "nock": "^13.3.8",
     "nyc": "^15.1.0",
