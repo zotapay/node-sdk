@@ -1,6 +1,6 @@
-[![NPM version](https://img.shields.io/badge/zotasdk-v1.3.3-blue)](https://www.npmjs.com/package/@zota/sdk)
+[![NPM version](https://img.shields.io/badge/zotasdk-v1.3.4-blue)](https://www.npmjs.com/package/@zota/sdk)
 [![codecov](https://codecov.io/gh/zota/node-sdk/branch/main/graph/badge.svg?token=NdEjuAL8eN)](https://codecov.io/gh/zota/node-sdk)
-![](https://img.shields.io/badge/NodeJS-20%2B-blue)
+![](https://img.shields.io/badge/NodeJS-18%2B-blue)
 ![node-sdk](https://github.com/user-attachments/assets/bc7e1478-07c0-4112-b9bf-f95f74820e8b)
 
 # Official NodeJS REST API SDK
