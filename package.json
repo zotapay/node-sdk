@@ -1,7 +1,7 @@
 {
   "name": "@zota/sdk",
   "author": "Zota Technology Pte LTD",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "This Node.js SDK provides the necessary methods for integrating Zota's Merchant API.",
   "repository": {
     "type": "git",
